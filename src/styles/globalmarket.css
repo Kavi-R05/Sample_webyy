@@ -1,0 +1,310 @@
+/* Section Layout */
+.marketplace-section {
+  width: 100%;
+  /* min-height: 800px; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 60px 20px;
+  overflow: hidden;
+  font-family: "Inter", sans-serif;
+}
+
+/* Header Styling */
+.header-container {
+  text-align: center;
+  max-width: 800px;
+  margin-bottom: 40px;
+}
+
+.sub-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.line {
+  width: 20px;
+  height: 2px;
+  background-color: #b89130;
+}
+
+.main-title {
+  font-size: 42px;
+  font-weight: 800;
+  color: #1a1a1a;
+  line-height: 1.2;
+}
+
+.highlight {
+  color: #b89130;
+}
+
+/* Map Wrapper */
+.map-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  height: 500px;
+  margin-top: 40px;
+}
+
+.world-map {
+  width: 100%;
+  opacity: 0.1; /* Faded map background */
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Central Yellow Shape */
+.yellow-blob {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 300px;
+  background-color: #eec13a;
+  border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+  z-index: 1;
+}
+
+/* Generic Seller Card Styling */
+.seller-card {
+  position: absolute;
+  background: white;
+  padding: 12px 15px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  z-index: 10;
+  transition: transform 0.3s ease;
+  min-width: 100px;
+}
+
+.seller-card:hover {
+  transform: translateY(-5px);
+}
+
+.seller-avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  margin-bottom: 8px;
+  object-fit: cover;
+}
+
+.seller-info {
+  text-align: center;
+}
+
+.name {
+  font-weight: 700;
+  font-size: 14px;
+  margin: 0;
+  color: #1a1a1a;
+}
+
+.location {
+  font-size: 10px;
+  color: #888;
+  margin: 0;
+}
+
+/* Specific Card Placements */
+.card-peggy {
+  top: 20%;
+  left: 15%;
+}
+.card-john {
+  bottom: 5%;
+  left: 35%;
+}
+.card-halina {
+  bottom: 10%;
+  right: 35%;
+}
+.card-janet {
+  top: 25%;
+  right: 28%;
+}
+.card-leonard {
+  bottom: 25%;
+  right: 10%;
+}
+
+/* Featured Card Styling (Middle One) */
+.featured-card {
+  position: absolute;
+  top: 10%;
+  left: 42%;
+  background: white;
+  padding: 10px;
+  border-radius: 15px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  z-index: 15;
+  width: 160px;
+  transform: rotate(-5deg); /* Slight tilt like the image */
+}
+
+.featured-img-container img {
+  width: 100%;
+  height: 100px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.featured-content h4 {
+  margin: 10px 0;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.avatar-stack {
+  display: flex;
+  margin-top: 5px;
+}
+
+.avatar-stack img {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px white solid;
+  margin-left: -8px;
+}
+
+.avatar-stack img:first-child {
+  margin-left: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .main-title {
+    font-size: 28px;
+  }
+  .map-wrapper {
+    height: 400px;
+    transform: scale(0.8);
+  }
+  .yellow-blob {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+/* --- Refinements to existing classes --- */
+.map-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  /* Remove fixed height, use aspect-ratio or min-height */
+  aspect-ratio: 16 / 9;
+  margin: 40px auto;
+}
+
+.world-map {
+  width: 100%;
+  height: auto;
+  opacity: 0.1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* --- Responsive Strategy --- */
+
+@media (max-width: 992px) {
+  .main-title {
+    font-size: 32px;
+  }
+
+  .seller-card {
+    padding: 8px 10px;
+    min-width: 80px;
+  }
+
+  .seller-avatar {
+    width: 35px;
+    height: 35px;
+  }
+
+  .featured-card {
+    width: 130px;
+  }
+}
+
+@media (max-width: 768px) {
+  .marketplace-section {
+    padding: 40px 15px;
+  }
+
+  .map-wrapper {
+    height: 450px;
+    transform: scale(0.9);
+    transform-origin: center;
+  }
+
+  .yellow-blob {
+    width: 180px;
+    height: 180px;
+  }
+
+  .card-peggy {
+    left: 5%;
+    top: 15%;
+  }
+  .card-janet {
+    right: 5%;
+    top: 20%;
+  }
+  .card-john {
+    left: 10%;
+    bottom: 10%;
+  }
+  .card-halina {
+    right: 10%;
+    bottom: 15%;
+  }
+  .card-leonard {
+    display: none;
+  }
+
+  .featured-card {
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-5deg);
+    top: 45%;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-title {
+    font-size: 24px;
+  }
+
+  .map-wrapper {
+    transform: scale(0.7);
+    margin-top: -50px;
+    margin-bottom: -50px;
+  }
+
+  .sub-title {
+    font-size: 12px;
+  }
+
+  .name {
+    font-size: 11px;
+  }
+  .location {
+    font-size: 8px;
+  }
+}

@@ -1,0 +1,135 @@
+/* BestSelling.css */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .best-selling {
+    width: 100%;
+    min-height: 100vh;
+    background: #f7f7f2;
+    padding: 80px 8%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Heading */
+  
+  .heading {
+    text-align: center;
+  }
+  
+  .heading h1 {
+    font-size: 80px;
+    font-family: serif;
+    font-weight: 600;
+    color: #111;
+  }
+  
+  .heading p {
+    margin-top: 18px;
+    font-size: 22px;
+    color: #444;
+  }
+  
+  /* Product Grid */
+  
+  .product-grid {
+    width: 100%;
+    margin-top: 70px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px;
+  }
+  
+  /* Card */
+  
+  .card {
+    width: 100%;
+  }
+  
+  .image-box {
+    width: 100%;
+    height: 520px;
+    background: linear-gradient(to bottom, #f2b91d, #f7f1df);
+    overflow: hidden;
+  }
+  
+  .image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* Text */
+  
+  .card h3 {
+    margin-top: 25px;
+    font-size: 30px;
+    color: #222;
+    font-weight: 600;
+  }
+  
+  .price-rating {
+    margin-top: 18px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    font-size: 24px;
+    color: #555;
+  }
+  
+  .divider {
+    width: 1px;
+    height: 25px;
+    background: #999;
+  }
+  
+  /* Button */
+  
+  .see-btn {
+    margin-top: 70px;
+    padding: 18px 50px;
+    border: 2px solid #45634b;
+    background: transparent;
+    font-size: 22px;
+    color: #45634b;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .see-btn:hover {
+    background: #45634b;
+    color: white;
+  }
+  
+  /* Responsive */
+  
+  @media (max-width: 992px) {
+    .heading h1 {
+      font-size: 55px;
+    }
+  
+    .heading p {
+      font-size: 18px;
+    }
+  
+    .product-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .image-box {
+      height: 450px;
+    }
+  
+    .card h3 {
+      font-size: 24px;
+    }
+  
+    .price-rating {
+      font-size: 20px;
+    }
+  }

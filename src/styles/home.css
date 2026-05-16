@@ -1,0 +1,275 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: rgb(47, 47, 43);
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+}
+
+.home {
+  width: 100%;
+  min-height: 100vh;
+  background: black;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.glow {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: #fcfc02;
+  filter: blur(140px);
+  border-radius: 50%;
+  top: -100px;
+  left: -150px;
+  opacity: 0.5;
+}
+
+/* Navbar */
+
+.topbar {
+  width: 100%;
+  padding: 35px 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 50px;
+  list-style: none;
+}
+
+.nav-links li {
+  font-size: 14px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.nav-links li:hover {
+  color: #d4d418;
+}
+
+.hero-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 80px;
+  position: relative;
+}
+
+.hero-left {
+  width: 50%;
+  z-index: 10;
+}
+
+.hero-left h1 {
+  font-size: 110px;
+  line-height: 110px;
+  font-weight: 300;
+  font-family: serif;
+  color: white;
+}
+
+.hero-left p {
+  margin-top: 30px;
+  font-size: 24px;
+  line-height: 38px;
+  color: #d9d9d9;
+}
+
+.hero-left button {
+  margin-top: 40px;
+  padding: 18px 45px;
+  border: none;
+  background: white;
+  color: black;
+  font-size: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.hero-left button:hover {
+  background: #d4d418;
+}
+
+.star {
+  position: absolute;
+  left: 54%;
+  top: 32%;
+  font-size: 90px;
+  color: white;
+}
+
+.hero-right {
+  width: 38%;
+  height: 650px;
+  border-top-left-radius: 250px;
+  overflow: hidden;
+  position: relative;
+}
+
+.hero-right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.curve {
+  position: absolute;
+  bottom: 80px;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  border-top: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+}
+
+@media (max-width: 992px) {
+  .hero-container {
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  .hero-left {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero-left h1 {
+    font-size: 70px;
+    line-height: 80px;
+  }
+
+  .hero-right {
+    width: 90%;
+    height: 500px;
+  }
+
+  .star {
+    display: none;
+  }
+
+  .topbar {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .nav-links {
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+/* Tablet & Small Laptops */
+@media (max-width: 1100px) {
+  .hero-left h1 {
+    font-size: 80px;
+    line-height: 90px;
+  }
+
+  .star {
+    left: 50%;
+    font-size: 60px;
+  }
+}
+
+/* Tablets & Mobile (Landscape) */
+@media (max-width: 992px) {
+  .topbar {
+    padding: 25px 40px;
+  }
+
+  .hero-container {
+    flex-direction: column;
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .hero-left {
+    width: 100%;
+    margin-bottom: 40px;
+  }
+
+  .hero-left h1 {
+    font-size: 70px;
+    line-height: 75px;
+  }
+
+  .hero-right {
+    width: 100%;
+    max-width: 500px;
+    height: 500px;
+    margin: 0 auto;
+    border-top-left-radius: 150px;
+  }
+
+  .star {
+    display: none;
+  }
+
+  .curve {
+    bottom: 20px;
+    height: 80px;
+  }
+}
+
+@media (max-width: 500px) {
+  .topbar {
+    padding: 20px;
+  }
+
+  .nav-links {
+    gap: 15px;
+  }
+
+  .nav-links li {
+    font-size: 12px;
+  }
+
+  .hero-left h1 {
+    font-size: 48px;
+    line-height: 55px;
+  }
+
+  .hero-left p {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  .hero-left button {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .hero-right {
+    height: 400px;
+    border-top-left-radius: 100px;
+  }
+
+  .glow {
+    width: 300px;
+    height: 300px;
+    top: -50px;
+    left: -100px;
+  }
+}
