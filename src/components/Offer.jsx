@@ -37,9 +37,8 @@ const Offer = () => {
   }, []);
 
   return (
-    <section className="offer-section">
+    <section className="offer-section" id="offers">
       <div className="offer-container">
-        {/* Left */}
         <div className="offer-left">
           <h1>Exclusive offer</h1>
 
@@ -48,7 +47,6 @@ const Offer = () => {
             savings of up to 40% off on our latest New Arrivals
           </p>
 
-          {/* Timer */}
           <div className="timer">
             <div className="time-box">
               <h2>{timeLeft.days}</h2>
@@ -74,14 +72,12 @@ const Offer = () => {
           <button>BUY NOW</button>
         </div>
 
-        {/* Right */}
         <div className="offer-right">
           <img
             src="https://images.unsplash.com/photo-1483985988355-763728e1935b"
             alt="fashion"
           />
 
-          {/* Dots */}
           <div className="dots">
             <span></span>
             <span></span>

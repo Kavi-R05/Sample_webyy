@@ -62,7 +62,8 @@ const products = [
 
 const Products = () => {
   return (
-    <section className="products-section">
+    /* CRITICAL FIX: Added id="collections" to link up with the navbar target */
+    <section className="products-section" id="collections">
       <div className="products-header">
         <h1>Our other products</h1>
 

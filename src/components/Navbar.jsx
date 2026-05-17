@@ -1,5 +1,7 @@
 import React from "react";
 import { ShoppingCart, User } from "lucide-react";
+import { Link } from "react-router-dom";
+import { NavHashLink } from "react-router-hash-link"; // 1. Import Hash Link
 import "../styles/navbar.css";
 
 const Navbar = () => {
@@ -7,33 +9,43 @@ const Navbar = () => {
     <nav className="navbar">
       {/* Logo */}
       <div className="navbar-logo">
-        <h2>MyStore</h2>
+        <NavHashLink smooth to="/#home">
+          <h2>MyStore</h2>
+        </NavHashLink>
       </div>
 
-      {/* Nav Links */}
       <ul className="navbar-links">
         <li>
-          <a href="#categories">Best sellers</a>
+          <NavHashLink smooth to="/#bestsellers">
+            Best sellers
+          </NavHashLink>
         </li>
 
         <li>
-          <a href="#collections">Collections</a>
+          <NavHashLink smooth to="/#collections">
+            Collections
+          </NavHashLink>
         </li>
 
         <li>
-          <a href="#about">About</a>
+          <NavHashLink smooth to="/#offers">
+            Offer
+          </NavHashLink>
         </li>
 
         <li>
-          <a href="#feedback">Feedback</a>
+          <NavHashLink smooth to="/#feedback">
+            Feedback
+          </NavHashLink>
         </li>
 
         <li>
-          <a href="#contact">Contact</a>
+          <NavHashLink smooth to="/#footer">
+            Contact
+          </NavHashLink>
         </li>
       </ul>
 
-      {/* Icons */}
       <div className="navbar-icons">
         <button className="icon-btn">
           <User size={22} />
@@ -45,7 +57,9 @@ const Navbar = () => {
           <span className="cart-count">0</span>
         </button>
 
-        <button classname="login-me"> Login </button>
+        <Link to="/login" className="login-me">
+          Login
+        </Link>
       </div>
     </nav>
   );

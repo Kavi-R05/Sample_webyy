@@ -40,7 +40,8 @@ const Feedback = () => {
   };
 
   return (
-    <section className="feedback-section">
+    /* CRITICAL FIX: Added id="feedback" so the Navbar link routes directly here */
+    <section className="feedback-section" id="feedback">
       <h2 className="feedback-title">Feedback Corner</h2>
 
       <div className="feedback-container">

@@ -3,7 +3,8 @@ import "../styles/footer.css";
 
 const Footer = () => {
   return (
-    <footer className="footer">
+    /* CRITICAL FIX: Added id="footer" so the Navbar link can find it */
+    <footer className="footer" id="footer">
       <div className="footer-main">
         <div className="footer-column brand-section">
           <h2 className="footer-logo">My Store</h2>
