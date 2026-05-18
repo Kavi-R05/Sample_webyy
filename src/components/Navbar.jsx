@@ -1,7 +1,7 @@
 import React from "react";
 import { ShoppingCart, User } from "lucide-react";
 import { Link } from "react-router-dom";
-import { NavHashLink } from "react-router-hash-link"; // 1. Import Hash Link
+import { NavHashLink } from "react-router-hash-link"; 
 import "../styles/navbar.css";
 
 const Navbar = () => {
