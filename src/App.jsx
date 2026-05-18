@@ -9,36 +9,65 @@ import GlobalMarket from "./components/GlobalMarket.jsx";
 import Footer from "./components/Footer.jsx";
 import Login from "./components/Login.jsx";
 import ProductDetail from "./components/Productdetail.jsx";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
+import Register from "./components/Register";
+import PaymentPage from "./components/Paymentpage";
+import Logout from "./components/Logout.jsx";
+
+// For cart global state management
+import { CartProvider } from "./components/CartContext";
+import Cart from "./components/Cart";
 
 function MainLandingPage() {
   return (
     <>
-      <Home />
-      <Bestsellers />
-      <Products />
-      <Offer />
-      <Feedback />
+      <div id="home">
+        <Home />
+      </div>
+      <div id="bestsellers">
+        <Bestsellers />
+      </div>
+      <div id="collection">
+        <Products />
+      </div>
+      <div id="about">
+        <Offer />
+      </div>
+      <div id="contact">
+        <Feedback />
+      </div>
       <GlobalMarket />
     </>
   );
 }
 
 function App() {
+  const location = useLocation();
+
+  const isAuthPage =
+    location.pathname === "/login" ||
+    location.pathname === "/register" ||
+    location.pathname === "/logout";
+
   return (
-    <div>
-      <Navbar />
+    <CartProvider>
+      <div>
+        {!isAuthPage && <Navbar />}
 
-      <Routes>
-        <Route path="/" element={<MainLandingPage />} />
+        <Routes>
+          <Route path="/" element={<MainLandingPage />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/product/:id" element={<ProductDetail />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/payment" element={<PaymentPage />} />
+          <Route path="/logout" element={<Logout />} />
+        </Routes>
 
-        <Route path="/login" element={<Login />} />
-
-        <Route path="/product/:id" element={<ProductDetail />} />
-      </Routes>
-
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    </CartProvider>
   );
 }
+
 export default App;

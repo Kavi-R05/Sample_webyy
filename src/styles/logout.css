@@ -1,0 +1,46 @@
+.logout-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+  font-family: sans-serif;
+}
+
+.logout-card {
+  text-align: center;
+  padding: 2.5rem;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+}
+
+.logout-card h2 {
+  color: #333;
+  margin: 1rem 0 0.5rem;
+}
+
+.logout-card p {
+  color: #666;
+  font-size: 0.95rem;
+}
+
+/* Simple Loading CSS Spinner */
+.spinner {
+  margin: 0 auto;
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../styles/products.css";
+import { Link } from "react-router-dom";
 
 const Products = () => {
   const [products, setProducts] = useState([]);
@@ -11,14 +12,21 @@ const Products = () => {
       try {
         setLoading(true);
 
-        const response = await fetch("/api/products/");
+        const response = await fetch(
+          "https://e-shopping-backend-m9je.onrender.com/api/products"
+        );
 
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
 
         const data = await response.json();
-        setProducts(data);
+
+        if (data && data.content) {
+          setProducts(data.content);
+        } else {
+          setProducts([]);
+        }
       } catch (err) {
         console.error("Failed to fetch products:", err);
         setError("Could not load products. Please try again later.");
@@ -36,26 +44,43 @@ const Products = () => {
         <h1>Our other products</h1>
       </div>
 
-      {loading && <div className="loading-spinner">Loading products...</div>}
+      {loading && (
+        <div className="loading-spinner">
+          Loading products (Render server waking up)...
+        </div>
+      )}
       {error && <div className="error-message">{error}</div>}
 
       {!loading && !error && (
         <div className="products-grid">
           {products.map((item) => (
-            <div className="product-card" key={item.id || item._id}>
-              <div className="product-image">
-                <img src={item.image} alt={item.title} />
-              </div>
+            <div className="product-card" key={item.id}>
+              <Link
+                to={`/product/${item.id}`}
+                className="product-card-link"
+                style={{ textDecoration: "none", color: "inherit" }}
+              >
+                <div className="product-image">
+                  <img
+                    src={
+                      item.images && item.images[0]
+                        ? item.images[0]
+                        : "https://via.placeholder.com/150"
+                    }
+                    alt={item.name}
+                  />
+                </div>
 
-              <h3>{item.title}</h3>
+                <h3>{item.name}</h3>
 
-              <div className="product-info">
-                <span>{item.price}</span>
+                <div className="product-info">
+                  <span>${item.price}</span>
 
-                <div className="line"></div>
+                  <div className="line"></div>
 
-                <span>{item.rating} ⭐</span>
-              </div>
+                  <span>Brand: {item.brand}</span>
+                </div>
+              </Link>
             </div>
           ))}
         </div>

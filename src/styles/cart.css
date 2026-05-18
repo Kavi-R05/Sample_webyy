@@ -1,0 +1,275 @@
+.cart-page-wrapper {
+  background-color: #f8f9fa;
+  min-height: 80vh;
+  padding: 40px 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.cart-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.cart-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #2d3436;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #dfe6e9;
+  padding-bottom: 15px;
+}
+
+.cart-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+}
+
+.cart-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cart-item-card {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  border: 1px solid #edf2f7;
+  gap: 15px;
+}
+
+.item-image img {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.item-details {
+  flex: 2;
+  padding-left: 20px;
+}
+
+.item-details h3 {
+  margin: 0 0 5px 0;
+  font-size: 18px;
+  color: #2d3436;
+}
+
+.item-brand {
+  margin: 0 0 8px 0;
+  font-size: 13px;
+  color: #b2bec3;
+}
+
+.item-price {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #2d3436;
+}
+
+.item-meta-pricing {
+  display: flex;
+  align-items: center;
+  flex: 2;
+  justify-content: space-between;
+}
+
+/* Updated to flex row layout to align text and dustbin horizontally */
+.item-quantity-display {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 15px;
+}
+
+/* New Dustbin Button Core Desktop Styles */
+.cart-delete-btn {
+  background: #f1f2f6;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 6px 8px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.cart-delete-btn:hover {
+  background-color: #ffe0e3;
+  transform: scale(1.1);
+}
+
+.cart-delete-btn:active {
+  transform: scale(0.95);
+}
+
+.item-subtotal {
+  flex: 1;
+  text-align: right;
+  font-size: 18px;
+  font-weight: 700;
+  color: #2d3436;
+}
+
+.cart-summary-card {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  border: 1px solid #edf2f7;
+  height: fit-content;
+}
+
+.cart-summary-card h3 {
+  margin-top: 0;
+  font-size: 20px;
+  color: #2d3436;
+}
+
+.cart-summary-card hr {
+  border: 0;
+  border-top: 1px solid #dfe6e9;
+  margin: 15px 0;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 12px 0;
+  font-size: 15px;
+  color: #636e72;
+}
+
+.free-shipping {
+  color: #2ecc71;
+  font-weight: 600;
+}
+
+.total-row {
+  font-size: 18px;
+  font-weight: 700;
+  color: #2d3436;
+  margin-top: 20px;
+}
+
+.checkout-btn {
+  width: 100%;
+  padding: 14px;
+  background-color: #2d3436;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.2s ease;
+}
+
+.checkout-btn:hover {
+  background-color: #000000;
+}
+
+.sync-btn {
+  width: 100%;
+  padding: 10px;
+  background-color: transparent;
+  color: #636e72;
+  border: 1px solid #b2bec3;
+  border-radius: 6px;
+  font-size: 13px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.empty-cart-container {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.empty-cart-container h2 {
+  font-size: 28px;
+  color: #2d3436;
+}
+
+.empty-cart-container p {
+  color: #636e72;
+  margin-bottom: 30px;
+}
+
+.shop-now-btn {
+  padding: 12px 30px;
+  background-color: #2d3436;
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+}
+
+@media (max-width: 900px) {
+  .cart-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .cart-page-wrapper {
+    padding: 20px 10px;
+  }
+
+  .cart-title {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+
+  .cart-item-card {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    padding: 15px;
+  }
+
+  .item-image img {
+    width: 75px;
+    height: 75px;
+  }
+
+  .item-details {
+    padding-left: 12px;
+  }
+
+  .item-details h3 {
+    font-size: 16px;
+  }
+
+  .item-meta-pricing {
+    flex-basis: 100%;
+    margin-top: 15px;
+    padding-top: 12px;
+    border-top: 1px dashed #edf2f7;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* Left-aligned layout for mobile rendering */
+  .item-quantity-display {
+    text-align: left;
+    justify-content: flex-start;
+  }
+
+  .item-subtotal {
+    text-align: right;
+    font-size: 16px;
+  }
+}
