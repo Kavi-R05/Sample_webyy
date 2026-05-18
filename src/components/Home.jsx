@@ -25,7 +25,7 @@ const Home = () => {
 
         <div className="hero-right">
           <img
-            src="https://images.unsplash.com/photo-1496747611176-843222e1e57c"
+            src="https://res.cloudinary.com/deva2001/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1779095141/95a1639c48a175e9171f93996180b5291c77bfb5_arbxtv.png"
             alt="fashion"
           />
         </div>
