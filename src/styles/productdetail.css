@@ -166,6 +166,10 @@
 @media screen and (max-width: 900px) {
   .product-container {
     flex-direction: column;
+    padding: 10px;
+  }
+  .product-page {
+    padding: 20px;
   }
 
   .product-image-section {
